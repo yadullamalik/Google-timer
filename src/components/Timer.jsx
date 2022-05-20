@@ -84,18 +84,34 @@ export const Timer = () => {
     <div>
       <div>
         <input
+          style={{ width: "100px", fontSize: "20px" }}
           type="text"
+          placeholder="Enter Hrs"
           onChange={(e) => handleTimerUpdatehrs(e.target.value)}
         />
         <input
+          style={{ width: "100px", fontSize: "20px" }}
           type="text"
+          placeholder="Enter Min"
           onChange={(e) => handleTimerUpdatemin(e.target.value)}
         />
         <input
+          style={{ width: "100px", fontSize: "20px" }}
           type="text"
+          placeholder="Enter Sec"
           onChange={(e) => handleTimerUpdatesec(e.target.value)}
         />
-        <button onClick={handleUpdate}>Start Timer</button>
+        <button
+          onClick={handleUpdate}
+          style={{
+            border: "1px solid white",
+            backgroundColor: "#2490ff",
+            color: "white",
+            margin: "5px",
+          }}
+        >
+          Start Timer
+        </button>
       </div>
       <p style={{ fontSize: "25px" }}>
         {hrs >= 0 && hrs !== null ? hrs + "h " : null}
@@ -103,6 +119,12 @@ export const Timer = () => {
         {sec <= 9 ? "0" + sec + "s" : sec + "s"}
       </p>
       <button
+        style={{
+          border: "1px solid white",
+          backgroundColor: "#2490ff",
+          color: "white",
+          margin: "5px",
+        }}
         onClick={() => {
           handlePause(
             pause ? setintervalfun() : clearInterval(counterRef.current)
@@ -112,6 +134,12 @@ export const Timer = () => {
         {hrs === 0 && min === 0 && sec === 0 ? "Ok" : pause ? "start" : "pause"}
       </button>
       <button
+        style={{
+          border: "1px solid #2490ff",
+          backgroundColor: "white",
+          color: "#2490ff",
+          margin: "5px",
+        }}
         onClick={() => {
           clearInterval(counterRef.current);
           setSec(0);

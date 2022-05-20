@@ -38,6 +38,12 @@ export const StopWatch = () => {
         {msec <= 9 ? "0" + msec : msec}
       </p>
       <button
+        style={{
+          border: "1px solid white",
+          backgroundColor: "#2490ff",
+          color: "white",
+          margin: "5px",
+        }}
         onClick={() => {
           handlePause(
             pause ? setintervalfun() : clearInterval(counterRef.current)
@@ -47,6 +53,12 @@ export const StopWatch = () => {
         {pause ? "Start" : "Stop"}
       </button>
       <button
+        style={{
+          border: "1px solid #2490ff",
+          backgroundColor: "white",
+          color: "#2490ff",
+          margin: "5px",
+        }}
         onClick={() => {
           clearInterval(counterRef.current);
           setMsec(0);

@@ -11,26 +11,23 @@ function App() {
     setShow("timer");
   };
   return (
-    <div className="App" style={
-      show === "timer"
-        ? { width:"700px" }
-        : null
-    }>
+    <div className="App" style={show === "timer" ? { width: "500px" } : null}>
       <div className="btn">
         <button
           style={
             show === "timer"
-              ? { borderBottom: "2px solid #2490ff" } || { color: "#2490ff" }
+              ? { borderBottom: "2px solid #2490ff", color: "#2490ff" }
               : null
           }
           onClick={() => setShow("timer")}
         >
-          <GiSandsOfTime />TIMER
+          <GiSandsOfTime />
+          TIMER
         </button>
         <button
           style={
             show === "stopwatch"
-              ? { borderBottom: "2px solid #2490ff" } || { color: "#2490ff" }
+              ? { borderBottom: "2px solid #2490ff", color: "#2490ff" }
               : null
           }
           onClick={() => setShow("stopwatch")}
@@ -39,7 +36,9 @@ function App() {
           STOPWATCH
         </button>
       </div>
-      <div className="div">{show === "stopwatch" ? <StopWatch /> : <Timer />}</div>
+      <div className="div">
+        {show === "stopwatch" ? <StopWatch /> : <Timer />}
+      </div>
     </div>
   );
 }
